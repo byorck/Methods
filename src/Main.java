@@ -9,15 +9,11 @@ public class Main {
         checkingProgramRelevance(1, 2026);
 
         System.out.println("Task № 3");
-        int deliveryDays = deliveryTime(10);
-        if (deliveryDays == 1) {
-            System.out.println("Потребуется дней: " + deliveryDays);
-        } else if (deliveryDays == 2) {
-            System.out.println("Потребуется дней: " + deliveryDays);
-        } else if (deliveryDays == 3) {
-            System.out.println("Потребуется дней: " + deliveryDays);
-        } else {
+        int deliveryDays = deliveryTime(20);
+        if (deliveryDays == 4) {
             System.out.println("Доставки нет");
+        } else {
+            System.out.println("Потребуется дней: " + deliveryDays);
         }
     }
 
