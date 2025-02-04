@@ -3,13 +3,13 @@ import java.time.LocalDate;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Task № 1");
-        verifierLeapYear(1804);
+        verifierLeapYear(1600);
 
         System.out.println("Task № 2");
-        checkingProgramRelevance(1, 2025);
+        checkingProgramRelevance(1, 2026);
 
         System.out.println("Task № 3");
-        int deliveryDays = deliveryTime(884);
+        int deliveryDays = deliveryTime(10);
         if (deliveryDays == 1) {
             System.out.println("Потребуется дней: " + deliveryDays);
         } else if (deliveryDays == 2) {
@@ -23,11 +23,9 @@ public class Main {
 
     public static void verifierLeapYear(int year) {
         if (year > 0 && year % 100 != 0 && year % 4 == 0 || year % 400 == 0) {
-            System.out.printf("%s год — високосный год", year);
-        } else if (year < 0) {
-            throw new RuntimeException("Введенный год отсутствует");
+            System.out.println(year + " год — високосный год");
         } else {
-            System.out.printf("%s год — невисокосный год", year);
+            System.out.println(year + " год — невисокосный год");
         }
     }
 
@@ -35,14 +33,14 @@ public class Main {
         int currentYear = LocalDate.now().getYear();
         if (clientDeviceYear < currentYear && system == 0) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-        } else if (system == 0 && clientDeviceYear == currentYear) {
+        } else if (system == 0) {
             System.out.println("Установите версию приложения для iOS по ссылке");
         } else if (clientDeviceYear < currentYear && system == 1) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
-        } else if (system == 1 && clientDeviceYear == currentYear) {
+        } else if (system == 1) {
             System.out.println("Установите версию приложения для Android по ссылке");
         } else {
-            throw new RuntimeException("Ошибка входящих параметров");
+            System.out.println("Ошибка входящих параметров");
         }
     }
 
@@ -53,10 +51,8 @@ public class Main {
             return 2;
         } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
             return 3;
-        } else if (deliveryDistance > 100) {
-            return 4;
         } else {
-            throw new IllegalAccessError("Ошибка ввода данных");
+            return 4;
         }
     }
 }
